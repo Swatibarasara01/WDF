@@ -1,0 +1,85 @@
+body{
+    font-family: Arial, sans-serif;
+    background:hsl(219, 100%, 97%);
+    margin:20px;
+}
+
+h1,h2,h3{
+    color:darkblue;
+    text-align:center;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:white;
+}
+
+th,td{
+    border:1px solid black;
+    padding:10px;
+}
+
+fieldset{
+    border:2px solid navy;
+    margin:20px 0;
+    padding:15px;
+    background:white;
+}
+
+legend{
+    color:darkred;
+    font-weight:bold;
+}
+
+input[type=text],
+input[type=password],
+input[type=email],
+input[type=tel],
+input[type=file],
+select,
+textarea{
+    width:90%;
+    padding:8px;
+    margin:5px 0;
+    border:1px solid gray;
+}
+
+input[type=submit],
+input[type=reset],
+button{
+    background:royalblue;
+    color:white;
+    border:none;
+    padding:8px 15px;
+    margin:8px 5px;
+    cursor:pointer;
+}
+
+button:hover,
+input[type=submit]:hover,
+input[type=reset]:hover{
+    background:darkblue;
+}
+
+a{
+    text-decoration:none;
+    color:black;
+}
+
+a:hover{
+    color:blue;
+}
+
+ul{
+    list-style:none;
+    padding:0;
+}
+
+li{
+    margin:10px 0;
+}
+
+p{
+    line-height:1.6;
+}
