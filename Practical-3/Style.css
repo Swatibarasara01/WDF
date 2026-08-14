@@ -1,85 +1,428 @@
-body{
+* {
+    box-sizing: border-box;
+}
+
+body {
     font-family: Arial, sans-serif;
-    background:hsl(219, 100%, 97%);
-    margin:20px;
+    background: hsl(219, 100%, 97%);
+    margin: 10px;
+    padding: 0;
 }
 
-h1,h2,h3{
-    color:darkblue;
-    text-align:center;
+h1,h2,h3 {
+    color: darkblue;
+    text-align: center;
 }
 
-table{
-    width:100%;
-    border-collapse:collapse;
-    background:white;
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
 }
 
-th,td{
-    border:1px solid black;
-    padding:10px;
+th,td {
+    border: 1px solid black;
+    padding: 10px;
 }
 
-fieldset{
-    border:2px solid navy;
-    margin:20px 0;
-    padding:15px;
-    background:white;
+th {
+    background: #e8efff;
 }
 
-legend{
-    color:darkred;
-    font-weight:bold;
+fieldset {
+    border: 2px solid navy;
+    margin: 20px 0;
+    padding: 15px;
+    background: white;
+    border-radius: 5px;
 }
 
-input[type=text],
-input[type=password],
-input[type=email],
-input[type=tel],
-input[type=file],
+legend {
+    color: darkred;
+    font-weight: bold;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"],
+input[type="file"],
 select,
-textarea{
-    width:90%;
-    padding:8px;
-    margin:5px 0;
-    border:1px solid gray;
+textarea {
+    width: 100%;
+    max-width: 100%;
+    padding: 9px;
+    margin: 5px 0;
+    border: 1px solid gray;
+    border-radius: 4px;
+    font-size: 15px;
 }
 
-input[type=submit],
-input[type=reset],
-button{
-    background:royalblue;
-    color:white;
-    border:none;
-    padding:8px 15px;
-    margin:8px 5px;
-    cursor:pointer;
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border: 2px solid royalblue;
+}
+
+input[type="submit"],
+input[type="reset"],
+button {
+    background: royalblue;
+    color: white;
+    border: none;
+    padding: 9px 15px;
+    margin: 8px 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
 }
 
 button:hover,
-input[type=submit]:hover,
-input[type=reset]:hover{
-    background:darkblue;
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+    background: darkblue;
 }
 
 a{
-    text-decoration:none;
-    color:black;
+    text-decoration: none;
+    color: black;
 }
 
-a:hover{
-    color:blue;
+a:hover {
+    color: blue;
 }
 
 ul{
-    list-style:none;
-    padding:0;
+    list-style: none;
+    padding: 0;
 }
 
 li{
-    margin:10px 0;
+    margin: 10px 0;
+}
+
+li a{
+    display: block;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+li a:hover{
+    background: #e8efff;
 }
 
 p{
-    line-height:1.6;
+    line-height: 1.6;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+textarea{
+    resize: vertical;
+}
+
+.dashboard-grid{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.dashboard-header{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    align-items: center;
+}
+
+.dashboard-content{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.card-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+.card{
+    background: white;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.flex-container{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.flex-row{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.button-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+input[type="radio"],
+input[type="checkbox"]{
+    margin-right: 5px;
+}
+
+.table-responsive{
+    width: 100%;
+    overflow-x: auto;
+}
+
+center {
+    position: fixed;
+
+    top: 30%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 100%;
+    max-width: 600px;
+    margin: 0;
+    padding: 20px;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+center h2{
+    color: darkblue;
+    text-align: center;
+    margin: 0 0 20px 0;
+}
+center table{
+    width: 500px;
+    max-width: 90%;
+    background: white;
+    border: 2px solid black;
+}
+
+center form{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+center form label{
+    font-weight: bold;
+}
+
+center input[type="text"],
+center input[type="password"]{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid gray;
+    border-radius: 4px;
+    font-size: 15px;
+}
+
+center input[type="submit"]{
+    width: 100%;
+
+    background: royalblue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0 0 0;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+center input[type="submit"]:hover{
+    background: darkblue;
+}
+
+@media (max-width: 575px){
+    body {
+        margin: 8px;
+    }
+    h1 {
+        font-size: 24px;
+    }
+    h2 {
+        font-size: 21px;
+    }
+    h3 {
+        font-size: 18px;
+    }
+    fieldset {
+        margin: 10px 0;
+        padding: 10px;
+    }
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    th,td {
+        padding: 7px;
+        font-size: 13px;
+    }
+
+    input[type="submit"],
+    input[type="reset"],
+    button {
+        margin: 5px 2px;
+    }
+
+    .button-container{
+        flex-direction: column;
+    }
+
+    center{
+        width: 100%;
+        max-width: 100%;
+
+        top: 40%;
+        left: 50%;
+
+        padding: 10px;
+    }
+
+    center h2{
+        font-size: 20px;
+    }
+
+    center table{
+        width: 90%;
+        max-width: 500px;
+    }
+
+    center input[type="text"],
+    center input[type="password"]{
+        width: 100%;
+    }
+
+    center input[type="submit"]{
+        width: 100%;
+    }
+}
+
+@media (min-width: 576px){
+
+    body {
+        margin: 15px;
+    }
+
+    .dashboard-header{
+        grid-template-columns: 1fr 2fr 1fr;
+    }
+
+    .dashboard-content{
+        grid-template-columns: 1fr 2fr;
+    }
+
+    .card-container{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .flex-row{
+        flex-direction: row;
+        align-items: center;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="file"],
+    select,
+    textarea{
+        width: 90%;
+    }
+
+    center{
+        top: 40%;
+    }
+
+    center table{
+        width: 500px;
+    }
+}
+
+@media (min-width: 768px){
+    body {
+        margin: 20px;
+    }
+    .dashboard-content {
+        grid-template-columns: 25% 75%;
+    }
+    .card-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .flex-container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    form {
+        gap: 12px;
+    }
+    fieldset {
+        padding: 20px;
+    }
+    th,td {
+        padding: 10px;
+    }
+    center {
+        top: 40%;
+    }
+    center table {
+        width: 500px;
+    }
+}
+
+@media (min-width: 992px) {
+    body {
+        max-width: 1400px;
+        margin: 20px auto;
+        padding: 0 20px;
+    }
+    .dashboard-header {
+        grid-template-columns: 25% 60% 15%;
+    }
+    .dashboard-content {
+        grid-template-columns: 25% 75%;
+    }
+    .card-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    center {
+        top: 40%;
+    }
+    center table {
+        width: 500px;
+    }
 }
