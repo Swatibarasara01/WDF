@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Fetch Multiple JSON Values</title>
+</head>
+
+<body>
+    <h1>Employee Data</h1>
+    <button onclick="getData()">Get Employee Data</button>
+    <div id="demo"></div>
+
+    <script>
+
+        function getData() {
+            fetch("employee.json")
+                .then(response => response.json())
+                .then(data => {
+                    var output = "";
+                    for (var i = 0; i < data.employees.length; i++) {
+                        output += "Name: " + data.employees[i].name + "<br>";
+                        output += "Age: " + data.employees[i].age + "<br>";
+                        output += "Department: " + data.employees[i].department + "<br>";
+                        output += "<hr>";
+                    }
+                    document.getElementById("demo").innerHTML = output;
+                })
+                .catch(error => {
+                    document.getElementById("demo").innerHTML =
+                        "Error loading data";
+                    console.log(error);
+                });
+        }
+    </script>
+</body>
+</html>
