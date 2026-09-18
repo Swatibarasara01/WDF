@@ -1,0 +1,164 @@
+{
+    "student": {
+        "studentId": "25DCE005",
+        "name": "Swati Barasara",
+        "department": "Computer Engineering",
+        "semester": "Semester 3",
+        "email": "swati@example.com",
+        "mobile": "9876543210",
+        "cgpa": "8.65",
+        "counsellor": "Ms. Sachi Joshi"
+    },
+
+    "courses": [
+        {
+            "courseCode": "MSUD203",
+            "courseName": "Engineering Mathematics",
+            "facultyName": "Dr. Patel",
+            "credits": 4
+        },
+        {
+            "courseCode": "CEUC201",
+            "courseName": "Object Oriented Programming",
+            "facultyName": "Prof. Dhruv",
+            "credits": 3
+        },
+        {
+            "courseCode": "CSUC301",
+            "courseName": "Data Structure And Algorithm",
+            "facultyName": "Dr. Surani",
+            "credits": 4
+        },
+        {
+            "courseCode": "ITUC208",
+            "courseName": "Fundamental Computer Networks",
+            "facultyName": "Prof. Riten",
+            "credits": 2
+        },
+        {
+            "courseCode": "HSUV202",
+            "courseName": "Communication Skills",
+            "facultyName": "Prof. Joshi",
+            "credits": 2
+        }
+    ],
+
+    "assignments": [
+        {
+            "assignmentId": "MSUD203",
+            "courseName": "Engineering Mathematics",
+            "assignmentTitle": "Functions and Arrays",
+            "assignedDate": "20-07-2026",
+            "dueDate": "27-07-2026",
+            "marks": 20
+        },
+        {
+            "assignmentId": "CEUC201",
+            "courseName": "Object Oriented Programming",
+            "assignmentTitle": "Lab Problem-II",
+            "assignedDate": "01-08-2026",
+            "dueDate": "11-08-2026",
+            "marks": 25
+        },
+        {
+            "assignmentId": "CSUC301",
+            "courseName": "Data Structure And Algorithm",
+            "assignmentTitle": "Unit-2 Problems",
+            "assignedDate": "02-08-2026",
+            "dueDate": "07-08-2026",
+            "marks": 15
+        }
+    ],
+
+    "attendance": [
+        {
+            "courseCode": "MSUD203",
+            "courseName": "Engineering Mathematics",
+            "totalClasses": 40,
+            "present": 38,
+            "absent": 2
+        },
+        {
+            "courseCode": "CEUC201",
+            "courseName": "Object Oriented Programming",
+            "totalClasses": 42,
+            "present": 40,
+            "absent": 2
+        },
+        {
+            "courseCode": "CSUC301",
+            "courseName": "Data Structure And Algorithm",
+            "totalClasses": 38,
+            "present": 35,
+            "absent": 3
+        },
+        {
+            "courseCode": "ITUC208",
+            "courseName": "Fundamental Computer Networks",
+            "totalClasses": 36,
+            "present": 34,
+            "absent": 2
+        },
+        {
+            "courseCode": "HSUV201",
+            "courseName": "Communication Skills",
+            "totalClasses": 30,
+            "present": 29,
+            "absent": 1
+        }
+    ],
+
+    "results": [
+        {
+            "courseCode": "MEUD203",
+            "courseName": "Engineering Mathematics",
+            "credits": 4,
+            "grade": "A+"
+        },
+        {
+            "courseCode": "CEUC201",
+            "courseName": "Object Oriented Programming",
+            "credits": 3,
+            "grade": "A"
+        },
+        {
+            "courseCode": "CSUC301",
+            "courseName": "Data Structure And Algorithm",
+            "credits": 4,
+            "grade": "B+"
+        },
+        {
+            "courseCode": "ITUC208",
+            "courseName": "Fundamental Computer Networks",
+            "credits": 2,
+            "grade": "A"
+        },
+        {
+            "courseCode": "HSUV202",
+            "courseName": "Communication Skills",
+            "credits": 2,
+            "grade": "O"
+        }
+    ],
+
+    "events": [
+        "Tech Fest 2026",
+        "Coding Competition",
+        "Sports Week",
+        "Cultural Festival"
+    ],
+
+    "announcements": [
+        "Semester Exam starts from 10 August.",
+        "Assignment submission last date: 5 August.",
+        "Holiday on Independence Day."
+    ],
+
+    "university": {
+        "name": "XYZ University",
+        "address": "Anand, Gujarat - 388421, India",
+        "phone": "+91 2697 265011",
+        "email": "info@xyz.ac.in",
+        "website": "https://www.xyz.ac.in"
+    }
+}
