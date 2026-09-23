@@ -8,28 +8,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $phone = $_POST["phone"];
     $password = $_POST["password"];
 
-    // Phone validation
     if (!preg_match("/^[6-9][0-9]{9}$/", $phone)) {
-
         echo "Invalid Phone Number. It must be 10 digits and start with 6-9.";
         exit;
     }
 
-    // Password validation
     if (!preg_match("/^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[@$!%*?&])[A-Za-z0-9@$!%*?&]{8}$/", $password)) {
-
         echo "Invalid Password. Password must be exactly 8 characters and contain a letter, number and special character.";
         exit;
     }
 
-    // CSV file
     $file = "registrations.csv";
 
     $handle = fopen($file, "a");
 
-    // Add headings if file is empty
     if (filesize($file) == 0) {
-
         fputcsv($handle, [
             "Name",
             "Email ID",
@@ -39,7 +32,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         ]);
     }
 
-    // Save data
     fputcsv($handle, [
         $name,
         $email,
