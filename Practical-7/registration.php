@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     $file = "registrations.csv";
-
+    
     $handle = fopen($file, "a");
 
     if (filesize($file) == 0) {
@@ -80,9 +80,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <br><br>
 
         <input type="submit" value="Register">
-
+        
     </form>
-
 </body>
-
 </html>
