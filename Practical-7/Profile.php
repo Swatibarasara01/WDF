@@ -3,7 +3,6 @@ $message = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    // Get and sanitize input
     $studentname = trim($_POST["studentname"] ?? "");
     $studentid   = trim($_POST["studentid"] ?? "");
     $department  = trim($_POST["department"] ?? "");
@@ -12,7 +11,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $errors = [];
 
-    // Server-side validation
     if (empty($studentname)) {
         $errors[] = "Student Name is required.";
     }
@@ -35,7 +33,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $errors[] = "Enter a valid email address.";
     }
 
-    // If validation fails
     if (!empty($errors)) {
 
         $message = "<div style='color:red;'>";
@@ -46,13 +43,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     } else {
 
-        // Open CSV file
         $file = "students.csv";
         $handle = fopen($file, "a");
 
         if ($handle !== false) {
-
-            // Add header if file is empty
+            
             if (filesize($file) == 0) {
                 fputcsv($handle, [
                     "Student Name",
@@ -63,7 +58,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 ]);
             }
 
-            // Store data in CSV
             fputcsv($handle, [
                 htmlspecialchars($studentname),
                 htmlspecialchars($studentid),
