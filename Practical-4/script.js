@@ -1,4 +1,3 @@
-// LOGIN VALIDATION
 function validateLogin() {
     const username = document.getElementById("username");
     const password = document.getElementById("password");
@@ -6,11 +5,9 @@ function validateLogin() {
     const usernameValue = username.value.trim();
     const passwordValue = password.value.trim();
 
-    // Reset previous styling
     username.style.border = "";
     password.style.border = "";
 
-    // Student ID empty
     if (usernameValue === "") {
         username.style.border = "2px solid red";
         alert("Please enter Student ID.");
@@ -18,7 +15,6 @@ function validateLogin() {
         return false;
     }
 
-    // Student ID format
     const studentIdPattern = /^[A-Za-z0-9]{5,15}$/;
     if (!studentIdPattern.test(usernameValue)) {
         username.style.border = "2px solid red";
@@ -27,7 +23,6 @@ function validateLogin() {
         return false;
     }
 
-    // Password empty
     if (passwordValue === "") {
         password.style.border = "2px solid red";
         alert("Please enter Password.");
@@ -35,24 +30,20 @@ function validateLogin() {
         return false;
     }
 
-    // Password length
     if (passwordValue.length < 6) {
         password.style.border = "2px solid red";
         alert("Password must contain at least 6 characters.");
         password.focus();
         return false;
     }
-
-    // Login successful
+    
     alert("Login Successful!");
 
-    // Go to Dashboard
     window.location.href = "dashboard.html";
 
     return false;
 }
 
-// FEEDBACK VALIDATION
 function validateFeedback() {
     const studentName = document.getElementById("studentname");
     const studentId = document.getElementById("studentid");
@@ -63,7 +54,6 @@ function validateFeedback() {
     const overallRating = document.getElementById("overallRating");
     const suggestions = document.getElementById("suggestions");
 
-    // Reset borders
     studentName.style.border = "";
     studentId.style.border = "";
     department.style.border = "";
@@ -72,8 +62,7 @@ function validateFeedback() {
     subject.style.border = "";
     overallRating.style.border = "";
     suggestions.style.border = "";
-
-    // Student Name
+    
     if (studentName.value.trim() === "") {
         studentName.style.border = "2px solid red";
         alert("Please enter Student Name.");
@@ -81,7 +70,6 @@ function validateFeedback() {
         return false;
     }
 
-    // Student ID
     if (studentId.value.trim() === "") {
         studentId.style.border = "2px solid red";
         alert("Please enter Student ID.");
@@ -89,7 +77,6 @@ function validateFeedback() {
         return false;
     }
 
-    // Department
     if (department.value.trim() === "") {
         department.style.border = "2px solid red";
         alert("Please enter Department.");
@@ -97,7 +84,6 @@ function validateFeedback() {
         return false;
     }
 
-    // Semester
     if (semester.value.trim() === "") {
         semester.style.border = "2px solid red";
         alert("Please enter Semester.");
@@ -105,7 +91,6 @@ function validateFeedback() {
         return false;
     }
 
-    // Faculty Name
     if (faculty.value.trim() === "") {
         faculty.style.border = "2px solid red";
         alert("Please enter Faculty Name.");
@@ -113,7 +98,6 @@ function validateFeedback() {
         return false;
     }
 
-    // Subject
     if (subject.value.trim() === "") {
         subject.style.border = "2px solid red";
         alert("Please enter Subject.");
@@ -121,37 +105,31 @@ function validateFeedback() {
         return false;
     }
 
-    // Teaching Quality
     if (!document.querySelector('input[name="teaching"]:checked')) {
         alert("Please rate Teaching Quality.");
         return false;
     }
 
-    // Communication Skills
     if (!document.querySelector('input[name="communication"]:checked')) {
         alert("Please rate Communication Skills.");
         return false;
     }
 
-    // Subject Knowledge
     if (!document.querySelector('input[name="knowledge"]:checked')) {
         alert("Please rate Subject Knowledge.");
         return false;
     }
 
-    // Punctuality
     if (!document.querySelector('input[name="time"]:checked')) {
         alert("Please rate Punctuality.");
         return false;
     }
-
-    // Doubt Solving
+    
     if (!document.querySelector('input[name="doubt"]:checked')) {
         alert("Please rate Doubt Solving Ability.");
         return false;
     }
 
-    // Overall Rating
     if (overallRating.value === "Select Rating") {
         overallRating.style.border = "2px solid red";
         alert("Please select Overall Rating.");
@@ -159,20 +137,17 @@ function validateFeedback() {
         return false;
     }
 
-    // Suggestions
     if (suggestions.value.trim() === "") {
         suggestions.style.border = "2px solid red";
         alert("Please enter your Suggestions.");
         suggestions.focus();
         return false;
     }
-
-    // Success
+    
     alert("Feedback Submitted Successfully!");
     return false;
 }
 
-// PROFILE VALIDATION
 function validateProfile() {
     const studentId = document.getElementById("profileStudentId");
     const name = document.getElementById("profileName");
@@ -181,7 +156,6 @@ function validateProfile() {
     const email = document.getElementById("profileEmail");
     const mobile = document.getElementById("profileMobile");
 
-    // Reset borders
     studentId.style.border = "";
     name.style.border = "";
     department.style.border = "";
@@ -189,7 +163,6 @@ function validateProfile() {
     email.style.border = "";
     mobile.style.border = "";
 
-    // Student ID
     if (studentId.value.trim() === "") {
         studentId.style.border = "2px solid red";
         alert("Please enter Student ID.");
@@ -197,7 +170,6 @@ function validateProfile() {
         return false;
     }
 
-    // Student ID format
     const studentIdPattern = /^[A-Za-z0-9]{5,15}$/;
     if (!studentIdPattern.test(studentId.value.trim())) {
         studentId.style.border = "2px solid red";
@@ -206,7 +178,6 @@ function validateProfile() {
         return false;
     }
 
-    // Name
     if (name.value.trim() === "") {
         name.style.border = "2px solid red";
         alert("Please enter Full Name.");
@@ -214,15 +185,12 @@ function validateProfile() {
         return false;
     }
 
-    // Department
     if (department.value === "Select Department") {
         department.style.border = "2px solid red";
         alert("Please select Department.");
         department.focus();
         return false;
     }
-
-    // Semester
     if (semester.value === "Select Semester") {
         semester.style.border = "2px solid red";
         alert("Please select Semester.");
@@ -230,7 +198,6 @@ function validateProfile() {
         return false;
     }
 
-    // Email
     if (email.value.trim() === "") {
         email.style.border = "2px solid red";
         alert("Please enter Email.");
@@ -238,7 +205,6 @@ function validateProfile() {
         return false;
     }
 
-    // Email format
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailPattern.test(email.value.trim())) {
         email.style.border = "2px solid red";
@@ -247,7 +213,6 @@ function validateProfile() {
         return false;
     }
 
-    // Mobile
     if (mobile.value.trim() === "") {
         mobile.style.border = "2px solid red";
         alert("Please enter Mobile Number.");
@@ -255,7 +220,6 @@ function validateProfile() {
         return false;
     }
 
-    // Mobile must contain 10 digits
     const mobilePattern = /^[0-9]{10}$/;
     if (!mobilePattern.test(mobile.value.trim())) {
         mobile.style.border = "2px solid red";
@@ -264,15 +228,12 @@ function validateProfile() {
         return false;
     }
 
-    // Success
     alert("Profile Saved Successfully!");
     return false;
 }
 
-// PAGE LOAD
 document.addEventListener("DOMContentLoaded", function () {
     
-    // LOGIN INPUT BORDER RESET
     const usernameInput = document.getElementById("username");
     const passwordInput = document.getElementById("password");
 
@@ -288,7 +249,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // FEEDBACK INPUT BORDER RESET
     const feedbackInputs = document.querySelectorAll(
         "#studentname, #studentid, #department, #semester, #faculty, #subject, #overallRating, #suggestions"
     );
@@ -302,7 +262,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // PROFILE INPUT BORDER RESET
     const profileInputs = document.querySelectorAll(
         "#profileStudentId, #profileName, #profileDepartment, #profileSemester, #profileEmail, #profileMobile"
     );
@@ -316,7 +275,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // SEARCH
     const searchBox =
         document.querySelector('input[placeholder="Search"]');
     if (searchBox) {
@@ -335,7 +293,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // MENU HOVER
     const menuItems =
         document.querySelectorAll("ul li");
 
@@ -349,7 +306,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // FIELDSET CLICK EFFECT
     const fieldsets =
         document.querySelectorAll("fieldset");
 
@@ -360,7 +316,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // PROFILE IMAGE PREVIEW
     const profilePicture =  document.getElementById("profilePicture");
     const previewImage =  document.getElementById("previewImage");
 
@@ -381,7 +336,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // DARK / LIGHT MODE
     let themeButton = document.getElementById("themeButton");
 
     if (!themeButton) {
@@ -401,7 +355,6 @@ document.addEventListener("DOMContentLoaded", function () {
         document.body.appendChild(themeButton);
     }
 
-    // CREATE DARK MODE CSS USING JS
     let darkStyle = document.getElementById("darkModeStyle");
     if (!darkStyle) {
         darkStyle =  document.createElement("style");
@@ -540,7 +493,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
-    // DARK MODE FUNCTION
     function enableDarkMode() {
         document.body.classList.add("dark-mode");
         themeButton.textContent = "☀️ Light Mode";
@@ -550,7 +502,6 @@ document.addEventListener("DOMContentLoaded", function () {
         );
     }
 
-    // LIGHT MODE FUNCTION
     function enableLightMode() {
         document.body.classList.remove("dark-mode");
         themeButton.textContent = "🌙 Dark Mode";
@@ -560,7 +511,6 @@ document.addEventListener("DOMContentLoaded", function () {
         );
     }
 
-    // RESTORE SAVED THEME
     const savedTheme = localStorage.getItem("theme");
     if (savedTheme === "dark") {
         enableDarkMode();
@@ -568,7 +518,6 @@ document.addEventListener("DOMContentLoaded", function () {
         enableLightMode();
     }
 
-    // THEME BUTTON CLICK
     themeButton.addEventListener("click", function () {
         if (
             document.body.classList.contains("dark-mode")
@@ -579,7 +528,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
     
-    // SETTINGS PAGE RADIO BUTTONS
     const themeRadios =
         document.querySelectorAll(
             'input[name="theme"]'
