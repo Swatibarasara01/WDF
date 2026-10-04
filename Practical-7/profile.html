@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="../Practical-3/Style.css">
+    <title>Student Profile</title>
+</head>
+
+<body>
+
+<center>
+
+<h2>👤 Student Profile</h2>
+
+<fieldset>
+
+<form action="profile.php" method="POST">
+
+<table cellpadding="10">
+
+<tr>
+    <td><b>Profile Picture</b></td>
+    <td>
+        <input type="file" id="profilePicture" accept=".jpg,.jpeg,.png">
+        <br><br>
+        <img id="previewImage" width="120" style="display:none;">
+    </td>
+</tr>
+
+<tr>
+    <td><b>Student ID</b></td>
+    <td>
+        <input
+            type="text"
+            id="profileStudentId"
+            name="studentId"
+            placeholder="Enter Student ID"
+            required
+        >
+    </td>
+</tr>
+
+<tr>
+    <td><b>Name</b></td>
+    <td>
+        <input
+            type="text"
+            id="profileName"
+            name="name"
+            placeholder="Enter Full Name"
+            required
+        >
+    </td>
+</tr>
+
+<tr>
+    <td><b>Department</b></td>
+    <td>
+        <select
+            id="profileDepartment"
+            name="department"
+            required
+        >
+            <option value="">Select Department</option>
+            <option>Civil Engineering</option>
+            <option>Computer Engineering</option>
+            <option>Mechanical Engineering</option>
+            <option>Electrical Engineering</option>
+            <option>Information Technology</option>
+        </select>
+    </td>
+</tr>
+
+<tr>
+    <td><b>Semester</b></td>
+    <td>
+        <select
+            id="profileSemester"
+            name="semester"
+            required
+        >
+            <option value="">Select Semester</option>
+            <option>Semester 1</option>
+            <option>Semester 2</option>
+            <option>Semester 3</option>
+            <option>Semester 4</option>
+            <option>Semester 5</option>
+            <option>Semester 6</option>
+            <option>Semester 7</option>
+            <option>Semester 8</option>
+        </select>
+    </td>
+</tr>
+
+<tr>
+    <td><b>Email</b></td>
+    <td>
+        <input
+            type="email"
+            id="profileEmail"
+            name="email"
+            placeholder="Enter Email"
+            required
+        >
+    </td>
+</tr>
+
+<tr>
+    <td><b>Mobile Number</b></td>
+    <td>
+        <input
+            type="tel"
+            id="profileMobile"
+            name="mobile"
+            placeholder="Enter Mobile Number"
+            required
+        >
+    </td>
+</tr>
+
+<tr>
+    <td colspan="2" align="center">
+
+        <input
+            type="submit"
+            value="Save"
+        >
+
+        <button
+            type="button"
+            id="themeButton"
+        >
+            🌙 Dark Mode
+        </button>
+
+        <input
+            type="reset"
+            value="Clear"
+        >
+
+    </td>
+</tr>
+
+</table>
+
+</form>
+
+<br>
+
+<a href="dashboard.html">
+    <button type="button">
+        ⬅ Back to Dashboard
+    </button>
+</a>
+
+</fieldset>
+
+</center>
+
+<script src="../Practical-4/script.js"></script>
+
+<script>
+
+document.getElementById("profilePicture").addEventListener("change", function () {
+
+    var file = this.files[0];
+    var preview = document.getElementById("previewImage");
+
+    if (file) {
+
+        var reader = new FileReader();
+
+        reader.onload = function (event) {
+            preview.src = event.target.result;
+            preview.style.display = "block";
+        };
+
+        reader.readAsDataURL(file);
+
+    } else {
+
+        preview.style.display = "none";
+
+    }
+
+});
+
+</script>
+
+</body>
+</html>
